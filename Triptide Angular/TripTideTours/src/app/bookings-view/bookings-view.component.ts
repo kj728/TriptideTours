@@ -26,7 +26,7 @@ export class BookingsViewComponent implements OnInit {
   tourName: string = ' '
   tourDestination!: string
   // userDeets!: IUser
-  userName:string=''
+  userName: string = ''
 
 
 
@@ -55,16 +55,27 @@ export class BookingsViewComponent implements OnInit {
         const hotelId = booking.hotelid;
         console.log("Tour ID:", tourId);
         console.log("Hotel ID:", hotelId);
+
+        this.toursService.getAllTours().subscribe(res => {
+          console.log(res)
+          // this.tourName = tour.tourname
+          // this.tourDestination = tour.tdestination
+        })
+
+
+
+
+
       });
 
     })
 
     this.userId = this.user.sub
     console.log(this.userId)
-  
+
     this.authService.getSpecificUser(this.userId).subscribe(res => {
-       console.log(res)
-       this.userName = res.username;
+      console.log(res)
+      this.userName = res.username;
     })
 
 
@@ -83,15 +94,15 @@ export class BookingsViewComponent implements OnInit {
 
   }
 
-  getTour(id:string):number{
-   let tourPrice!:number;
+  getTour(id: string): number {
+    let tourPrice!: number;
     console.log("Getting Tour:", id)
     this.toursService.getSpecificTour(id).subscribe(tour => {
       // console.log(tour)
       // this.tourName = tour.tourname
       // this.tourDestination = tour.tdestination
-     
-      tourPrice =tour.tprice
+
+      tourPrice = tour.tprice
     })
     return tourPrice;
   }
