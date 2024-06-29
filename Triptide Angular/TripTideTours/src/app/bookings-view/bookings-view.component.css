@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+
 :root {
     /* --orange-color: #FFA500; */
     --blue-color: #009CFF;
@@ -39,7 +48,7 @@
 
 }
 
-.abv-left{
+.abv-left {
     width: 70%;
     min-height: 95vh;
     display: grid;
@@ -50,13 +59,13 @@
     background-color: rgba(18, 201, 64, 0);
 }
 
-.booking-card{
+.booking-card {
     width: 220px;
-    height: 350px;
+    height: 300px;
     padding: 30px 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: start;
     gap: 10px;
     background-color: rgba(255, 255, 255, 0.904);
@@ -71,16 +80,27 @@
 
 }
 
-.booking-card  #TourName{
+.booking-card p {
+    font-size: 14px;
+    text-align: start;
+    font-weight: 600;
+    /* margin-top: -0px; */
+    font-family: "Nunito Sans", sans-serif;
+    /* color:  #009CFF; */
+
+}
+
+.booking-card #TourName {
+    margin-top: -10px;
     font-size: 20px;
     text-align: start;
     font-weight: 600;
     font-family: "Nunito Sans", sans-serif;
-    color:  #009CFF;
+    color: #009CFF;
 }
 
 
-.booking-card .booking-header{
+.booking-card .booking-header {
     width: 100%;
     height: 50px;
     background-color: rgba(192, 171, 171, 0);
@@ -90,13 +110,13 @@
     align-items: center;
 }
 
-.booking-card  .booking-header ion-icon{
+.booking-card .booking-header ion-icon {
     font-size: 30px;
     color: rgb(255, 0, 0);
-    visibility:hidden;
+    visibility: hidden;
 }
 
-.booking-card .booking-action{
+.booking-card .booking-action {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -105,11 +125,12 @@
     background-color: rgba(177, 148, 18, 0);
 
 }
+
 .booking-action #btnEditBooking {
     width: 40%;
     border: none;
     border-radius: 20px;
-    background-image: linear-gradient(to right, #009CFF,  #009CFF);
+    background-image: linear-gradient(to right, #009CFF, #009CFF);
     padding: 0px 20px;
     font-weight: 600;
     font-size: 15px;
@@ -117,14 +138,14 @@
     padding: 10px 0px;
     color: #FFFFFF;
     margin-top: 0px;
-    
+
 }
 
 .booking-action #btnCancelBooking {
     width: 40%;
     border: none;
     border-radius: 20px;
-    background-image: linear-gradient(to right, #ff0000,#ff0000);
+    background-image: linear-gradient(to right, #ff0000, #ff0000);
     padding: 0px 20px;
     font-weight: 600;
     font-size: 15px;
@@ -179,7 +200,7 @@
 }
 
 .abv-right #tourIdBookingUpdate {
-    display:none;
+    display: none;
 }
 
 .abv-right #lblTourNameBooking {
@@ -187,8 +208,8 @@
 }
 
 
-.abv-right #bookingID{
-    display:none;
+.abv-right #bookingID {
+    display: none;
 }
 
 .abv-right form input[type="text"],
@@ -235,8 +256,3 @@ input[type="number"] {
     margin-bottom: 5px;
     font-weight: bold;
 }
-
-
-
-
-

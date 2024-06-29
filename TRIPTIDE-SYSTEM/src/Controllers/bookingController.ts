@@ -79,6 +79,27 @@ export const getSpecificBooking = async (req: Request<{ id: string }>, res: Resp
     }
 
 }
+export const getSpecificUserBookings = async (req: Request<{ id: string }>, res: Response) => {
+    try {
+        //get specific user bookings from database
+        const userBookings = (await dbInstance.exec("getSpecificUserBookings", { id: req.params.id })).recordset as IBooking[]
+
+        //check if user bookings exist
+        if (userBookings.length > 0) {
+            //return all bookings
+            return res.status(200).json(userBookings);
+        }
+
+        //if there are no bookings return a message
+        return res.status(404).json({ message: "Booking Not Found For This User: "+req.params.id })
+
+    } catch (error) {
+        //error message
+        return res.status(500).json({ message: "Something went wrong " + error });
+    }
+
+}
+
 
 export const updateBooking = async (req: Request<{ id: string }>, res: Response) => {
     try {

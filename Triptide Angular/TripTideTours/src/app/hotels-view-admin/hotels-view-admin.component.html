@@ -47,7 +47,7 @@
     <div class="ahv-right" id="displayHotels" *ngIf="allHotels">
 
         <div class="hotel-card" *ngFor="let hotel of allHotels; let i = index">
-            <h1>{{hotel.hotelname}}</h1>
+            <h1>{{hotel.hotelname|shortenDescription:15}}</h1>
             <h2>Location: {{hotel.hotellocation}}</h2>
             <h2>Star Rating: {{hotel.hotelrating}}</h2>
             <div class="ratings" *ngIf="hotel.hotelrating">

@@ -5,6 +5,7 @@ import { HotelService } from '../Services/Hotel/hotel.service';
 import { addHotel, IHotel } from '../Models Angular/Hotel';
 
 import 'boxicons'
+import { ShortenDescriptionPipe } from '../Pipes/ShortenDescription/shorten-description.pipe';
 
 
 
@@ -12,7 +13,7 @@ import 'boxicons'
 @Component({
   selector: 'app-hotels-view-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,ShortenDescriptionPipe],
   templateUrl: './hotels-view-admin.component.html',
   styleUrl: './hotels-view-admin.component.css'
 })

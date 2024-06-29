@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser, SignInRequest, SignInResponse, SignUpResponse } from '../../Models Angular/User';
 import { Observable } from 'rxjs';
@@ -11,6 +11,8 @@ export class AuthenticationService {
 
   private readonly Base_URL = "http://localhost:1000/auth/"
   private isSignedin = false;
+  retrievedToken = localStorage.getItem('token') as string
+
   constructor(private http: HttpClient) {
 
   }
@@ -30,16 +32,23 @@ export class AuthenticationService {
       //this.isSignedin = true
       return true
     }
-   // this.isSignedin = false
+    // this.isSignedin = false
     return false
   }
 
   signOut() {
     localStorage.removeItem('token')
     localStorage.removeItem('currentUser')
-   // this.isSignedin = false
+    // this.isSignedin = false
     return true;
   }
 
+  getSpecificUser(id: string): Observable<IUser> {
+    return this.http.get<IUser>(this.Base_URL + id, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
+      })
+    });
+  }
 
 }

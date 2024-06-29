@@ -21,8 +21,8 @@ Content-Type: application/json
 
 #####
 #GET SPECIFIC USER
-GET  http://localhost:1000/auth/ec6844d3-b9a3-49cc-9c89-58a3b2aa3b35
-
+GET  http://localhost:1000/auth/5be463ec-1fb6-4a6d-94f5-643b60d5b751
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1YmU0NjNlYy0xZmI2LTRhNmQtOTRmNS02NDNiNjBkNWI3NTEiLCJ1c2VybmFtZSI6IktKIiwiaXNBZG1pbiI6MCwiaWF0IjoxNzE5Njc4OTI5LCJleHAiOjE3MTk4NTE3Mjl9.Tq0Z9DANNCVlEIBGMhP5espUnZO_inyVNp7EgkSOnGg
 
 #####
 #UPDATE USER

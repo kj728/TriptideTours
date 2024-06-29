@@ -8,16 +8,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class BookingService {
 
-  private readonly BaseURL ="http://localhost:1000/tours/"
+  private readonly BaseURL = "http://localhost:1000/bookings/"
 
   retrievedToken = localStorage.getItem('token') as string
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  addBooking(newBooking:addBooking):Observable<{message:string}>{
-    return this.http.post<{message:string}>(this.BaseURL,newBooking,{
-      headers:new HttpHeaders({
-        token:this.retrievedToken
+  addBooking(newBooking: addBooking): Observable<{ message: string }> {
+    return this.http.post<{ message: string }>(this.BaseURL, newBooking, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
       })
     })
   }
@@ -34,13 +34,18 @@ export class BookingService {
     return this.http.get<IBooking[]>(this.BaseURL);
   }
 
-  getAllBookingsUser(): Observable<IBooking[]> {
-    return this.http.get<IBooking[]>(this.BaseURL);
+  getAllBookingsUser(id: string): Observable<IBooking[]> {
+    return this.http.get<IBooking[]>(this.BaseURL + 'user/' + id, {
+      headers: new HttpHeaders({
+        token: this.retrievedToken
+      })
+    });
   }
 
 
 
-  
+
+
   getSpecificBooking(id: string): Observable<IBooking> {
     return this.http.get<IBooking>(this.BaseURL + id, {
       headers: new HttpHeaders({
