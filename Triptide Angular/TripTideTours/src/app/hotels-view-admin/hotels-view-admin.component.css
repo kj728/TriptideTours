@@ -1,0 +1,221 @@
+:root {
+    /* --orange-color: #FFA500; */
+    --blue-color: #009CFF;
+    --dblue-color: #009CFF;
+    --dorange-color: #AA6000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --red-color: #ff0000;
+    --gray-color: #9E9E9E;
+    --light-gray-color: #E0E0E0;
+
+    --header-text: #000000;
+    --body-text: #FFA500;
+
+    --btn-text-color: #ffffff;
+    --green-color: #17cc11;
+}
+
+
+
+
+/* ****************************STYLING FOR HOTESL ADMIN VIEW****************************** */
+
+.admin-hotels-view {
+    width: 78vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    background-color: rgba(255, 255, 255, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    /* background-image: url("https://wallpapercave.com/wp/wp11350002.jpg"); */
+    /* background-image: url("https://wallpapercave.com/wp/QEfDSmk.jpg"); */
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: 100% 100vh;
+    gap: 10px;
+
+}
+
+.error-message {
+    background-color: #ffa60000;
+    margin-top: -10px;
+    text-align: center;
+    color: red;
+}
+
+.ahv-left {
+    width: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: rgba(177, 28, 28, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    gap: 10px;
+    padding: 10px 0px;
+    position: sticky;
+    top: 0;
+}
+
+.ahv-left form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+.ahv-left form h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.ahv-left form #hotelID {
+    display: none;
+}
+
+.ahv-left form input[type="text"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.ahv-left form input[type="password"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+}
+
+.ahv-left form input[type="submit"] {
+    width: 60%;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #009CFF, #009CFF);
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    font-style: bold;
+    padding: 10px 0px;
+    color: #FFFFFF;
+    margin-top: 5px;
+    font-family: "Nunito Sans", sans-serif;
+
+
+}
+
+
+.ahv-right {
+    width: 70%;
+    min-height: 95vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    align-items: start;
+    background-color: rgba(22, 151, 44, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    padding: 0px 10px;
+}
+
+.hotel-card {
+
+    width: 205px;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.089);
+    border-radius: 10px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+
+.hotel-card .ratings .bx {
+    font-size: 20px;
+    color: #FFA500;
+    font-size: 20px;
+}
+
+.edit-del-hotel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #aa600000;
+    gap: 10px;
+
+
+}
+
+.edit-del-hotel .bx {
+    color: red;
+    font-size: 30px;
+}
+
+
+.hotel-card h1 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000000;
+    margin-top: 5px;
+}
+
+.hotel-card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000000;
+}
+
+.hotel-card ion-icon {
+    font-size: 20px;
+    color: #009CFF;
+}
+
+.hotel-card input[type="button"] {
+    width: 70%;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #009CFF, #009CFF);
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    font-style: bold;
+    padding: 10px 0px;
+    color: #FFFFFF;
+    margin-top: 5px;
+    font-family: "Nunito Sans", sans-serif;
+
+}

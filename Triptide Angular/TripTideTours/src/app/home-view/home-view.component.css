@@ -1,0 +1,76 @@
+:root {
+    /* --orange-color: #FFA500; */
+    --blue-color: #009CFF;
+    --dblue-color: #009CFF;
+    --dorange-color: #AA6000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --red-color: #ff0000;
+    --gray-color: #9E9E9E;
+    --light-gray-color: #E0E0E0;
+
+    --header-text: #000000;
+    --body-text: #FFA500;
+
+    --btn-text-color: #ffffff;
+    --green-color: #17cc11;
+}
+
+
+
+
+/* ****************************STYLING FOR HOME VIEW****************************** */
+
+.home-view {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(160, 14, 14, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    /* background-image: url("https://wallpapercave.com/wp/wp11350002.jpg"); */
+    background-image: url("https://wallpapercave.com/wp/QEfDSmk.jpg");
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: 100% 100vh;
+    gap: 10px;
+    border-radius: 10px;
+
+}
+
+.home-view h1 {
+
+    font-size: 50px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.home-view p {
+    width: 75%;
+    font-size: 24px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+
+.home-view #btnSeeTours {
+    width: 30%;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #009CFF,  #009CFF);
+    padding: 5px 0px;
+    font-weight: 500;
+    font-size: 20px;
+    font-style: bold;
+    color: #FFFFFF;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+}

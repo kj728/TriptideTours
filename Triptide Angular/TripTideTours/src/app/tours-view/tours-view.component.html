@@ -1,0 +1,76 @@
+<div class="dynamic-view-manager">
+
+      <!-- TOURS VIEW USER -->
+  <div class="tours-view" id="app-tours">
+
+    <div class="utv-left" id="diplayUserTours" *ngIf="allTours">
+
+        
+        <!-- <div class="tour-card">
+            <h1>Maasai Mara</h1>
+            <h2>Destination : Maasai Mara</h2>
+            <p>Home to The Big Five, Mighty Masai Warriors And The Eight Wonder Of The World. This
+                destination is a must see for every traveler.
+            </p>
+            <h3>Price: Ksh 10000.00</h3>
+            <input id="btnBookNow" type="button" value="Book Now">
+        </div>
+        -->
+
+        
+        <div class="tour-card" *ngFor="let tour of allTours; let i= index">
+            <div class="tcard-head">
+                <h1>{{tour.tourname|shortenDescription:20}}</h1>
+            </div>
+            <div class="tcard-body">
+                <h2>Destination: {{tour.tdestination}}</h2>
+                <p>{{tour.tdescription |shortenDescription:170}}</p>
+                <h3>Price: {{tour.tprice| currency:"Ksh"}}</h3>
+            </div>
+         
+            <div class="edit-del">
+                <input id="btnBookNow" type="button" value="Book Now">
+                <!-- <input id="btnEditTour" type="button" value="Edit Tour" (click)="editTour(i)">
+                <i class='bx bxs-trash-alt' (click)="deleteTour(i)"></i> -->
+            </div>
+            
+
+        </div>
+
+    </div>
+
+    <div class="utv-right" id="diplayUserTours">
+        <h2>Book Now</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="userToursForm">
+            <label for="tourName">Tour Name</label>
+            <span id="tourIdBooking">1</span>
+            <label for="tourNametTV" id="lblTourName"> </label>
+            <!-- <input type="text" id="tourName" name="tourName" required> -->
+
+            <label for="tourDate">Tour Start Date:</label>
+            <input type="date" id="tourSDate" name="tourDate" formControlName="tourStartDate" >
+
+            <label for="tourDate">Tour End Date:</label>
+            <input type="date" id="tourEDate" name="tourDate" formControlName="tourEndDate">
+
+
+            <label for="hotelSelection">Select Hotel:</label>
+            <select id="hotelSelection" name="hotelSelection" >
+                <option value="">Select Hotel</option>
+                <option value="hotel1">Hotel 1</option>
+                <option value="hotel2">Hotel 2</option>
+
+            </select>
+
+            <label for="tourGuests">Number of Guests:</label>
+            <input type="number" id="tourGuests" name="tourGuests" value="1" formControlName="guests">
+
+            <input type="submit" value="Proceed" id="app-proceed">
+        </form>
+
+    </div>
+
+</div>
+
+
+</div>

@@ -1,0 +1,241 @@
+:root {
+    /* --orange-color: #FFA500; */
+    --blue-color: #009CFF;
+    --dblue-color: #009CFF;
+    --dorange-color: #AA6000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --red-color: #ff0000;
+    --gray-color: #9E9E9E;
+    --light-gray-color: #E0E0E0;
+
+    --header-text: #000000;
+    --body-text: #FFA500;
+
+    --btn-text-color: #ffffff;
+    --green-color: #17cc11;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* ****************************STYLING FOR AUTH VIEW****************************** */
+
+.auth-view {
+    width: 78vw;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(224, 11, 243, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    /* background-image: url("https://wallpapercave.com/wp/wp11350002.jpg"); */
+    /* background-image: url("https://wallpapercave.com/wp/QEfDSmk.jpg"); */
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: 100% 100vh;
+    gap: 10px;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+.error-message {
+    background-color: #ffa60000;
+    margin-top: -10px;
+    text-align: center;
+    color:red;
+}
+
+.auth-left {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(151, 22, 22, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    gap: 10px;
+}
+
+.auth-left form {
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(22, 151, 33, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px 0;
+
+
+}
+
+.auth-left form h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+
+.auth-left form input[type="text"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    border: 1px solid #ccc;
+}
+
+.auth-left form input[type="email"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    border: 1px solid #ccc;
+}
+
+.auth-left form input[type="password"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    border: 1px solid #ccc;
+}
+
+.auth-left form input[type="submit"] {
+    width: 40%;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #009CFF, #009CFF);
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    font-style: bold;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #FFFFFF;
+    margin-top: 20px;
+
+}
+
+
+.auth-right {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(151, 22, 22, 0);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    gap: 10px;
+}
+
+
+.auth-right form {
+
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(125, 22, 151, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px 0;
+
+}
+
+.auth-right form h2 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+    color: #000000;
+}
+
+.auth-right form input[type="text"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    border: 1px solid #ccc;
+}
+
+.auth-right form input[type="password"] {
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(235, 230, 230);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    border: 1px solid #ccc;
+}
+
+.auth-right form input[type="submit"] {
+    width: 40%;
+    border: none;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #009CFF, #009CFF);
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 15px;
+    font-style: bold;
+    padding: 10px 10px;
+    font-family: "Nunito Sans", sans-serif;
+    color: #FFFFFF;
+    margin-top: 20px;
+
+}
+
+.sucess-message{
+    width: 100%;
+    background-color: #17cc11a4;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+.failure-message{
+    width: 100%;
+    background-color: #cc1111a4;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 17px;
+    font-family: "Nunito Sans", sans-serif;
+
+}
+
+

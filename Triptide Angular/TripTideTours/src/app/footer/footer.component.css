@@ -1,0 +1,99 @@
+:root {
+    /* --orange-color: #FFA500; */
+    --blue-color: #009CFF;
+    --dblue-color: #009CFF;
+    --dorange-color: #AA6000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --red-color: #ff0000;
+    --gray-color: #9E9E9E;
+    --light-gray-color: #E0E0E0;
+
+    --header-text: #000000;
+    --body-text: #FFA500;
+
+    --btn-text-color: #ffffff;
+    --green-color: #17cc11;
+}
+
+.footer{
+    margin: 5px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(17, 216, 17, 0);
+}
+
+.app-footer {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 10px;
+    /* gap:40px; */
+
+}
+.app-footer p {
+
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+.app-footer ul {
+
+    background-color: rgba(255, 255, 255, 0.767);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    cursor: pointer;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.103); */
+}
+
+.app-footer ul li {
+    list-style: none;
+   
+}
+
+.app-footer ul li a {
+    list-style: none;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.app-footer ul li a:hover {
+    list-style: none;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #009CFF;
+}
+
+
+
+.app-footer ion-icon {
+    font-size: 30px;
+    color: var(--blue-color);
+
+}
+
+#heart {
+    color: #ff0000d5;
+}

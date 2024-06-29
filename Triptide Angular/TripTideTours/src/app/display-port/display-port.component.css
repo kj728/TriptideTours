@@ -1,0 +1,71 @@
+:root {
+    /* --orange-color: #FFA500; */
+    --blue-color: #009CFF;
+    --dblue-color: #009CFF;
+    --dorange-color: #AA6000;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --red-color: #ff0000;
+    --gray-color: #9E9E9E;
+    --light-gray-color: #E0E0E0;
+
+    --header-text: #000000;
+    --body-text: #FFA500;
+
+    --btn-text-color: #ffffff;
+    --green-color: #17cc11;
+}
+
+
+.body {
+
+    margin: 5px auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(211, 233, 13, 0);
+
+
+}
+
+.app-display-port {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 0, 242, 0);
+    background-color: rgb(255, 255, 255);
+
+
+}
+
+.dynamic-view-manager {
+    width: 99.9%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    background-color: rgb(255, 255, 255);
+    /* background-image: url("https://wallpapercave.com/wp/QEfDSmk.jpg"); */
+    /* background-image: url("https://wallpapercave.com/wp/wp11350002.jpg"); */
+
+    background-repeat: no-repeat;
+    background-position: start;
+    background-size: 100% 100vh;
+    border-radius: 10px;
+
+
+
+
+}
