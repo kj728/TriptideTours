@@ -102,7 +102,7 @@
 
 .booking-card .booking-header {
     width: 100%;
-    height: 50px;
+    height: 0px;
     background-color: rgba(192, 171, 171, 0);
     display: flex;
     flex-direction: row;
@@ -151,7 +151,7 @@
     font-size: 15px;
     font-style: bold;
     padding: 10px 0px;
-    color: var(--btn-text-color);
+    color: #FFFFFF;
     margin-top: 0px;
 }
 

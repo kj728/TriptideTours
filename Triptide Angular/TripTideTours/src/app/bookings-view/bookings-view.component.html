@@ -1,16 +1,17 @@
-  <!-- BOOKINGS VIEW USER -->
-  <div class="bookings-view" id="app-bookings">
+<!-- BOOKINGS VIEW USER -->
+<div class="bookings-view" id="app-bookings">
     <div class="abv-left" id="displayUserBookings" *ngIf="usersBookings">
 
         <div class="booking-card" *ngFor="let booking of usersBookings; let i = index">
             <div class="booking-header" id="">
-                <h2>{{booking.id|shortenDescription:10}}</h2>
+                <!-- <h2>{{booking.id|shortenDescription:12}}</h2> -->
                 <!-- <ion-icon name="trash-outline"></ion-icon> -->
             </div>
-            <p>User: {{userName}}</p>
-            <h3 id="TourName" ></h3>
-            <!-- <p>Price: {{getTour(booking.hotelid)}}</p>
-            <p>Hotel Name: Serena Hotel</p> -->
+            <h4>Booked By: {{userName}}</h4>
+            <p>Booked On: {{booking.bookingdate}}</p>
+            <h3 id="TourName">{{ bookedTours[i]}}</h3>
+            <p>Price: {{toursPrice[i] |currency:'Ksh '}}</p>
+            <p>Hotel Name: {{bookedHotels[i] |shortenDescription:15}}</p> 
             <p>Start Date: {{booking.bstartdate}} </p>
             <p>End Date: {{booking.benddate}} </p>
             <p>Guests: {{booking.bguests}}</p>
@@ -21,7 +22,7 @@
                 <input id="btnCancelBooking" type="button" value="Cancel">
             </div>
         </div>
-        
+
 
     </div>
 
