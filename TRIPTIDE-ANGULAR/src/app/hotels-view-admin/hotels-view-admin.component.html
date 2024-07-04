@@ -1,0 +1,63 @@
+<!-- HOTELS ADMIN VIEW -->
+
+<!-- Box Icons -->
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- or -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+</head>
+
+
+
+<div class="admin-hotels-view" id="app-hotels-admin">
+    <div class="ahv-left">
+        <form (ngSubmit)="onSubmit()" [formGroup]="addHotelForm">
+            <h2 id="hotelsFormTitle">Add Hotel</h2>
+            <span id="hotelID">1</span>
+            <input id="edtHotelName" type="text" name="hotelName" placeholder="Name" formControlName="hotelname">
+            <div *ngIf="addHotelForm.get('hotelname')?.touched && !addHotelForm.get('hotelname')?.valid">
+                <p class="error-message" *ngIf="addHotelForm.get('hotelname')?.hasError('required')"><i>Hotel name is
+                        required</i></p>
+
+            </div>
+            <input id="edtHotelLocation" type="text" name="hotelLocation" placeholder="Location" formControlName="hotellocation">
+            <div *ngIf="addHotelForm.get('hotellocation')?.touched && !addHotelForm.get('hotelLocation')?.valid">
+                <p class="error-message" *ngIf="addHotelForm.get('hotellocation')?.hasError('required')"><i>Hotel
+                        location is required</i></p>
+
+            </div>
+            <input id="edtStarRating" type="text" name="starRating" placeholder="Star Rating"
+                formControlName="hotelrating">
+            <div *ngIf="addHotelForm.get('hotelrating')?.touched && !addHotelForm.get('hotelrating')?.valid">
+                <p class="error-message" *ngIf="addHotelForm.get('hotelrating')?.hasError('required')"><i>Hotel rating
+                        is required</i></p>
+                <p class="error-message" *ngIf="addHotelForm.get('hotelrating')?.hasError('invalidNumber')"><i>Hotel
+                        rating should be a number (1-5) </i></p>
+
+
+            </div>
+            <input id="btnAddHotel" type="submit" value="{{btnText}}" [disabled]="addHotelForm.invalid" >
+
+        </form>
+
+
+    </div>
+
+    <div class="ahv-right" id="displayHotels" *ngIf="(allHotels$ |async)  ">
+
+        <div class="hotel-card" *ngFor="let hotel of allHotels$ |async; let i = index">
+            <h1>{{hotel.hotelname|shortenDescription:15}}</h1>
+            <h2>Location: {{hotel.hotellocation}}</h2>
+            <h2>Star Rating: {{hotel.hotelrating}}</h2>
+            <div class="ratings" *ngIf="hotel.hotelrating">
+                <!-- Star icons will be dynamically added here based on hotel rating -->
+                <i class='bx bxs-star' *ngFor="let star of [].constructor(hotel.hotelrating)"></i>            </div>
+            <div class="edit-del-hotel">
+                <input id="btnEditHotel" type="button" value="Edit Hotel" (click)="editHotel(i)">
+                <i class='bx bxs-trash-alt' (click)="deleteHotel(i)"></i>
+            </div>
+        </div>
+        
+    </div>
+</div>

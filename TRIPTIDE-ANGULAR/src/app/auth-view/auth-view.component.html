@@ -1,0 +1,92 @@
+<!-- AUTH VIEW USER -->
+
+
+<!-- <div class="sucess-message" *ngIf="UIsuccessMessage" >
+    <p>{{UIsuccessMessage}}</p>
+</div>
+
+<div class="failure-message" *ngIf="UIerrorMessage">
+    <p>{{UIerrorMessage}}</p>
+</div> -->
+
+<div class="sucess-message" *ngIf="SIsuccessMessage$|async" >
+    <p>{{SIsuccessMessage$|async}}</p>
+</div>
+
+<div class="sucess-message" *ngIf="SUsuccessMessage$|async" >
+    <p>{{SUsuccessMessage$|async}}</p>
+</div>
+
+<div class="failure-message" *ngIf="SIerrorMessage$ |async">
+    <p>{{SIerrorMessage$ |async}}</p>
+</div>
+
+<div class="failure-message" *ngIf="SUerrorMessage$  |async">
+    <p>{{SUerrorMessage$ | async}}</p>
+</div>
+
+
+
+
+<div class="auth-view " id="app-auth">
+
+    <div class="auth-left">
+
+        <form (ngSubmit)="onSubmit('SIGNUP')" [formGroup]="signUpForm">
+            <h2>Sign Up</h2>
+
+            <input id="edtUsrNameSU" type="text" name="username" placeholder="Username" formControlName="username">
+            <div *ngIf="signUpForm.get('username')?.touched && !signUpForm.get('username')?.valid">
+                <p class="error-message"   ><i>Name is required</i></p>
+            </div>
+            <input id="edtUsrEmailSU" type="text" name="email" placeholder="Email" formControlName="uemail">
+            <div *ngIf="signUpForm.get('uemail')?.touched && !signUpForm.get('useremail')?.valid">
+                <p class="error-message" *ngIf="signUpForm.get('uemail')?.hasError('required')"><i>Email is required</i>
+                </p>
+                <p class="error-message" *ngIf="signUpForm.get('uemail')?.hasError('email')"><i>Email is invalid</i></p>
+
+            </div>
+
+
+            <input id="edtUsrPasswordSU" type="password" name="password" placeholder="********"
+                formControlName="upassword">
+            <div *ngIf="signUpForm.get('upassword')?.touched && !signUpForm.get('password')?.valid">
+                <p class="error-message" *ngIf="signUpForm.get('upassword')?.hasError('required')"><i>Password is
+                        required</i></p>
+                <p class="error-message" *ngIf="signUpForm.get('upassword')?.hasError('pattern')"><i>Password must
+                        contain: <br> 1 uppercase letter <br> 1 lowercase letter <br> 1 number</i></p>
+                <p class="error-message" *ngIf="signUpForm.get('upassword')?.hasError('minlength')"><i>Password must be
+                        at least 8 characters</i></p>
+            </div>
+            <input id="btnSignUp" type="submit" value="Sign Up" [disabled]="signUpForm.invalid">
+
+        </form>
+    </div>
+
+    <div class="auth-right">
+
+        <form (ngSubmit)="onSubmit('SIGNIN')" [formGroup]="signInForm">
+            <h2>Sign In</h2>
+
+            <input id="edtUsrNameSI" type="text" name="uemail" placeholder="Email" formControlName="uemail">
+            <div *ngIf="signInForm.get('uemail')?.touched && !signInForm.get('uemail')?.valid">
+                <p class="error-message" *ngIf="signInForm.get('uemail')?.hasError('required')"><i>Email is required</i></p>
+                <p class="error-message" *ngIf="signUpForm.get('uemail')?.hasError('email')"><i>Email is invalid</i></p>
+
+            </div>
+            <input id="edtUsrPasswordSI" type="password" name="password" placeholder="********"
+                formControlName="upassword">
+            <div *ngIf="signInForm.get('upassword')?.touched && !signInForm.get('password')?.valid">
+                <p class="error-message" *ngIf="signInForm.get('upassword')?.hasError('required')"><i>Password is
+                        required</i></p>
+                <p class="error-message" *ngIf="signInForm.get('upassword')?.hasError('pattern')"><i>Password must
+                        contain: <br> 1 uppercase letter <br> 1 lowercase letter <br> 1 number</i></p>
+                <p class="error-message" *ngIf="signInForm.get('upassword')?.hasError('minlength')"><i>Password must be
+                        at least 8 characters</i></p>
+            </div>
+            <input id="btnSignIn" type="submit" value="Sign In" [disabled]="signInForm.invalid" >
+        </form>
+
+    </div>
+
+</div>

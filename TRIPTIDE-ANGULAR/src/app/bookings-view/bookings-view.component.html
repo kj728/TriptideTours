@@ -1,0 +1,98 @@
+<!-- BOOKINGS VIEW USER -->
+<div class="bookings-view" id="app-bookings">
+    <div class="abv-left" id="displayUserBookings" *ngIf="usersBookings">
+
+        <div class="booking-card" *ngFor="let booking of usersBookings; let i = index">
+            <div class="booking-header" id="">
+                <!-- <h2>{{booking.id|shortenDescription:12}}</h2> -->
+                <!-- <ion-icon name="trash-outline"></ion-icon> -->
+            </div>
+            <h3 id="TourName">{{ bookedTours[i]}}</h3>
+            <h4>Booked By: {{userName}}</h4>
+            <p>Booked On: {{booking.bookingdate}}</p>
+            <p>Price: {{toursPrice[i] |currency:'Ksh ' }}</p>
+            <p>Hotel Name: {{bookedHotels[i] |shortenDescription:15}}</p>
+            <p>Start Date: {{booking.bstartdate}} </p>
+            <p>End Date: {{booking.benddate}} </p>
+            <p>Guests: {{booking.bguests}}</p>
+            <p>Status: {{booking.bstatus}}</p>
+
+            <div class="booking-action">
+                <input id="btnEditBooking" type="button" value="Edit" (click)="startBookingUpdateProcess(i)">
+                <input id="btnCancelBooking" type="button" value="Cancel">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="abv-right" id="displayUserBookings">
+        <h2>Update Booking</h2>
+        <form (ngSubmit)="onSubmit()" [formGroup]="userBookingUpdateForm">
+            <label for="tourName">Tour Name</label>
+            <!-- <span id="tourIdBooking"></span> -->
+            <label for="tourNametTV" id="lblTourName">{{tourName}} </label>
+            <!-- <input type="text" id="tourName" name="tourName" required> -->
+
+            <label for="tourDate">Tour Start Date:</label>
+            <input type="date" id="tourSDate" name="tourDate" formControlName="bstartdate">
+            <div
+                *ngIf="userBookingUpdateForm.get('bstartdate')?.touched && !userBookingUpdateForm.get('bstartdate')?.valid">
+                <p class="error-message" *ngIf="userBookingUpdateForm.get('bstartdate')?.hasError('required')">
+                    <i>Booking start date is required</i>
+                </p>
+
+            </div>
+
+            <label for="tourDate">Tour End Date:</label>
+            <input type="date" id="tourEDate" name="tourDate" formControlName="benddate">
+            <div *ngIf="userBookingUpdateForm.get('benddate')?.touched && !userBookingUpdateForm.get('benddate')?.valid">
+                <p class="error-message" *ngIf="userBookingUpdateForm.get('benddate')?.hasError('required')">
+                    <i>Booking end date is required</i>
+                </p>
+
+            </div>
+
+
+            <label for="hotelSelection">Select Hotel:</label>
+            <div>
+                <select id="hotelSelection" name="hotelSelection" formControlName="bhotelindex">
+                    <!-- <option value="" selected disabled>Select Hotel</option> -->
+                    <option *ngFor="let hotel of filteredHotels; let i = index" value="{{i}}">{{hotel.hotelname}}
+                    </option>
+                </select>
+                <div
+                    *ngIf="userBookingUpdateForm.get('bhotelindex')?.touched && !userBookingUpdateForm.get('bhotelindex')?.valid">
+                    <p class="error-message" *ngIf="userBookingUpdateForm.get('bhotelindex')?.hasError('required')">
+                        <i>Hotel is required</i>
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+
+            <label for="tourGuests">Number of Guests:</label>
+            <input type="number" id="tourGuests" name="tourGuests" value="1" formControlName="bguests">
+            <div *ngIf="userBookingUpdateForm.get('bguests')?.touched && !userBookingUpdateForm.get('bguests')?.valid">
+                <p class="error-message" *ngIf="userBookingUpdateForm.get('bguests')?.hasError('required')">
+                    <i>Nunber of guests is required</i>
+                </p>
+                <p class="error-message" *ngIf="userBookingUpdateForm.get('bguests')?.hasError('min')">
+                    <i>Number of guests is cannot be below 1</i>
+                </p>
+
+            </div>
+            <input type="button" value="Update Booking" id="app-userupdate-booking">
+<!-- 
+            <input type="submit" value="Proceed" id="app-proceed"> -->
+        </form>
+
+
+
+
+    </div>
+
+</div>

@@ -6,6 +6,11 @@ import { IUser, Payload, UserRequest } from '../Models/User';
 import { v4 as uid } from 'uuid';
 import { RegisterSchema } from '../Input Validation/userValidaton';
 
+import path from "path";
+import dotenv from "dotenv";
+dotenv.config({ path: path.resolve(__dirname, "../../.env") })
+
+
 import bcrypt from 'bcrypt';
 import Jwt from 'jsonwebtoken';
 
@@ -129,9 +134,9 @@ export const signInUser = async (req: Request, res: Response) => {
         //get data from the user
         const { uemail, upassword } = req.body
         //get user information from the database
-     //   const user = (await dbInstance.exec("getSpecificUser", { id: req.params.id })).recordset[0] as IUser;
+        //   const user = (await dbInstance.exec("getSpecificUser", { id: req.params.id })).recordset[0] as IUser;
 
-        const users:IUser[] = (await dbInstance.exec("getAllUsers", { })).recordset as IUser[]
+        const users: IUser[] = (await dbInstance.exec("getAllUsers", {})).recordset as IUser[]
 
         const user = users.find(u => u.uemail === uemail);
 
@@ -148,10 +153,12 @@ export const signInUser = async (req: Request, res: Response) => {
                         username: user.username,
                         isAdmin: user.isAdmin
                     }
-                    //generate token for the user
+                
                     const token = Jwt.sign(payload, process.env.SECRET_KEY as string, { expiresIn: "2d" });
+
                     //success message
                     return res.status(200).json({ message: "User Signed In Successfully", token, payload })
+
                 }
 
             } else {
